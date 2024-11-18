@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    background-color: rgb(37, 39, 39);
+    margin: 0;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: #131616;
+    padding: 28px;
+} 
+
+.h1 {
+    color: white;
+    font-size: 3rem;
+    padding: 10px;
+    animation: glowing-text 1.5s infinite alternate;
+}
+
+.section {
+    padding: 50px;
+    display: flex;
+    isolation: isolate;
+}
+
+.h2 {
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+}
+
+.container {
+    position: relative;
+    background-color: #131616;
+    padding: 40px;
+    width: 300px;
+    border-radius: 15px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    border: 5px solid transparent;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.8),
+        rgba(0, 255, 0, 0.8),
+        rgba(0, 0, 255, 0.8),
+        rgba(255, 0, 255, 0.8)
+    );
+    background-size: 400% 400%; 
+    background-clip: border-box;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0); 
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0); 
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;/*The xor or exclude operation effectively means "remove where the mask is applied," leaving only the non-masked areas visible*/
+    animation: glowing-border 4s linear infinite;
+    z-index: -1;
+}
+
+/* Button Styling */
+button {
+    padding: 13px 20px;
+    font-size: 16px;
+    background-color: #34c5ab;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 
+    0 0 15px rgba(216, 133, 66, 0.4),  
+    0 0 15px rgba(213, 203, 4, 0.4),
+    0 0 15px rgba(114, 239, 5, 0.4);
+}
+
+button:hover {
+    background-color: #6ed95e;
+}
+
+@keyframes glowing-border {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes glowing-text {
+    0% {
+        text-shadow: 
+            0 0 5px rgba(214, 207, 61, 0.8), 
+            0 0 10px rgba(214, 207, 61, 0.6), 
+            0 0 15px rgba(214, 207, 61, 0.4);
+    }
+    50% {
+        text-shadow: 
+            0 0 5px rgba(211, 82, 82, 0.8), 
+            0 0 10px rgba(211, 82, 82, 0.6), 
+            0 0 15px rgba(211, 82, 82, 0.4);
+    }
+    100% {
+        text-shadow: 
+            0 0 5px rgba(114, 216, 24, 0.8), 
+            0 0 10px rgba(114, 216, 24, 0.6), 
+            0 0 15px rgba(114, 216, 24, 0.4);
+    }
+}
+
