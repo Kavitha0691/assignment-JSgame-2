@@ -11,16 +11,17 @@ body {
     background-color: rgb(37, 39, 39);
     margin: 0;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 .header {
-    background-color: #131616;
+    /* background-color: #131616; */
     padding: 28px;
 } 
 
 .h1 {
     color: white;
-    font-size: 3rem;
+    font-size: 4rem;
     padding: 10px;
     animation: glowing-text 1.5s infinite alternate;
 }
@@ -39,7 +40,7 @@ body {
 
 .container {
     position: relative;
-    background-color: #131616;
+    background-color: #556161;
     padding: 40px;
     width: 300px;
     border-radius: 15px;

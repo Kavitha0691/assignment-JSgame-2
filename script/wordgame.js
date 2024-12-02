@@ -141,3 +141,25 @@ const getTotalPairs = () => {
     return total;
 };
 
+const addBackgroundVideo = () => {
+    const video = document.createElement("video");
+    video.src = "./images/wordgamevideo.mp4"; 
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true; 
+    video.playsInline = true; 
+
+    video.style.position = "fixed";
+    video.style.top = "0";
+    video.style.left = "0";
+    video.style.width = "100%";
+    video.style.height = "100%";
+    video.style.objectFit = "cover";
+    video.style.zIndex = "-1";
+
+    document.body.appendChild(video);
+};
+
+addBackgroundVideo();
+
+
