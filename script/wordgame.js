@@ -103,6 +103,11 @@ const startGame = () => {
                     return;
                 }
 
+                if (userInput === userInput.toUpperCase() && userInput !== userInput.toLowerCase()) {
+                    alert("Invalid input: Please avoid using uppercase letters!");
+                    continue;
+                }
+
                 if (userInput && userInput.toLowerCase() === currentPair.answer) {
                     score++;
                     alert(`\u{2705} Correct Guess! Your Score: ${score}/${getTotalPairs()}`);
